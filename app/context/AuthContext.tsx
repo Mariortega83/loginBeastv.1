@@ -10,7 +10,7 @@ interface AuthProps {
 }
 
 const TOKEN_KEY = 'userToken';
-export const API_URL = '';
+export const API_URL = 'https://jsonplaceholder.typicode.com';
 const AuthContext = createContext<AuthProps>({});
 
 export const useAuth = () => {

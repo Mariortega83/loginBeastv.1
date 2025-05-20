@@ -14,17 +14,18 @@ const AppNavigator = () => {
   
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         {authState?.authenticated ? 
           <Stack.Screen 
             name="Home" 
             component={Home} 
             options={{
-              headerRight: () => <Button onPress={onLogout} title="Sign Out" />
+              headerRight: () => <Button onPress={onLogout} title="Sign Out" />,
+              headerShown: false
             }}
           /> 
          : 
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Login" component={Login}  />
         }
       </Stack.Navigator>
     </NavigationContainer>

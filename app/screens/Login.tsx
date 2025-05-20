@@ -8,13 +8,13 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const { onLogin, onRegister } = useAuth();
 
-    useEffect(() => {
-        const testCall = async () => {
-            const result = await axios.get(`${API_URL}/users`);
+    // useEffect(() => {
+    //     const testCall = async () => {
+    //         const result = await axios.get(`${API_URL}/users`);
 
-        }
-        testCall();
-    }, []);
+    //     }
+    //     testCall();
+    // }, []);
 
     const login = async () => {
         const result = await onLogin!(email, password);
@@ -67,6 +67,8 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         width: '100%',
+        justifyContent: 'center',
+        top: 30
     },
 
 });
