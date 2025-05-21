@@ -36,11 +36,14 @@ npm install
 ```
 ## 3. Con las dependencias instaladas 
 
-Crea un .env en la raíz del proyecto con la URL de la API, no pongas localhost.
+Crea un .env en la raíz del proyecto con la URL de la API, no pongas localhost. (Saltaros esto, leer abajo)
 
    ```env
      API_URL='http://tuIP:3000'
    ```
+
+Nada no hagais caso de esto, me las he dado de listo y usar el dotenv el solo para el back con node, abrir el proyecto en el VS CODE id a AuthContext.tsx y cambiar la API_URL con vuestra IP sin usar el localhost eeee ya lo digo. En android va bien, hay que añadir verificación de campos y si queremos añadir usuarios desde ahí otro formulario con el nombre, que es lo que pide el POST.
+
 ## 4. Correr la interfaz
 
 Depende de lo que tengas se hará de una forma u otra, de momento con un emulador de android se hace así:
