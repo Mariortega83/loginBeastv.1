@@ -8,32 +8,48 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const { onLogin, onRegister } = useAuth();
 
-    // useEffect(() => {
-    //     const testCall = async () => {
-    //         const result = await axios.get(`${API_URL}/users`);
+    useEffect(() => {
+        const testCall = async () => {
+            const result = await axios.get(`${API_URL}/api/auth/login`);
 
-    //     }
-    //     testCall();
-    // }, []);
+        }
+        testCall();
+    }, []);
 
     const login = async () => {
-        const result = await onLogin!(email, password);
-
-        if (result.error && result.error) {
-            alert(result.msg);
+        try {
+            const result = await onLogin!(email, password);
+            if (result.error) {
+                alert(result.msg);
+            } else {
+                console.log('Login successful', result.data);
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                alert('Error inesperado: ' + error.message);
+            } else {
+                alert('Error inesperado');
+            }
+            console.error(error);
         }
     };
-
     const register = async () => {
-        const result = await onRegister!(email, password);
-
-        if (result.error && result.error) {
-            alert(result.msg);
-        } else {
-            login();
+        try {
+            const result = await onRegister!(email, password);
+            if (result.error) {
+                alert(result.msg);
+            } else {
+                await login();
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                alert('Error inesperado: ' + error.message);
+            } else {
+                alert('Error inesperado');
+            }
+            console.error(error);
         }
     };
-
     return (
         <View style={styles.container}>
             <Image source={{ uri: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' }} style={styles.image} />
@@ -46,6 +62,11 @@ const Login = () => {
         </View>
     );
 };
+
+
+
+
+
 
 const styles = StyleSheet.create({
     image: {
@@ -74,3 +95,4 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
+

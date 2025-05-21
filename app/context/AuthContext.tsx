@@ -10,7 +10,7 @@ interface AuthProps {
 }
 
 const TOKEN_KEY = 'userToken';
-export const API_URL = 'https://jsonplaceholder.typicode.com';
+export const API_URL = 'http://192.168.1.33:3000';
 const AuthContext = createContext<AuthProps>({});
 
 export const useAuth = () => {
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: any) => {
 
     const register = async (email: string, password: string) => {
         try {
-            return await axios.post(`${API_URL}/users`, {
+            return await axios.post(`${API_URL}/api/auth/register`, {
                 email,
                 password
             });
@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }: any) => {
 
     const login = async (email: string, password: string) => {
         try {
-            const result = await axios.post(`${API_URL}/auth`, {
+            const result = await axios.post(`${API_URL}/api/auth/login`, {
                 email,
                 password
             });
