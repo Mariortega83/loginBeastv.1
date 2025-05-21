@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import * as SecureStore from 'expo-secure-store';
+import dotenv from 'dotenv';
+dotenv.config();
 
 interface AuthProps {
     authState?: { token: string | null, authenticated: boolean | null };
@@ -10,7 +12,7 @@ interface AuthProps {
 }
 
 const TOKEN_KEY = 'userToken';
-export const API_URL = 'http://192.168.1.33:3000';
+export const API_URL = process.env.API_URL;
 const AuthContext = createContext<AuthProps>({});
 
 export const useAuth = () => {
