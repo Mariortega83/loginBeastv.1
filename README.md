@@ -60,3 +60,6 @@ Cuando este arrancado en la terminal, le damos a la ' a ', para que detecte el e
 
 Junto con mi compañero Carlos(wasap carli), hemos creado la interfaz de movil, el ha hecho el diseño y yo voy a encargarme de meterlo en el contexto de autenticación, posteriormente insertaré los datos de la base de datos en los respectivos campos de la interfaz. Bien trabajado niño.
 
+### 6. Implementación de base de datos
+
+He usado la base de datos para mostrar los datos correspondientes en las tarjetas de las clases en el home, lo he sacado a un componente externo. Problemas que he tenido: No sabía como comparar el id del gimnasio asignado al user y el id del gimnasio donde se imparte la clase, buscando info, y para arroarme otra llamada para obtener los datos, he concluido conque la mejor opción para hacerlo era mandarlo en el Token, pues así al descodificarlo se pueda obtener de forma rápida. Una vez arreglado el proeblema de comparar los id, la info de las clases se saca bien. Tengo que darle una vuelta a la forma en la que se crea el componente. Looking forward to empezar a tocar más partes de la interfaz, creación de planos y la parte web para los admin, muy sencilla de hacer sisi.
