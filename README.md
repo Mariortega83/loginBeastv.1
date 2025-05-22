@@ -56,3 +56,7 @@ Cuando este arrancado en la terminal, le damos a la ' a ', para que detecte el e
 
 ## Stay Tunned comming soon...
 
+### 5. Cambios metidos
+
+Junto con mi compañero Carlos(wasap carli), hemos creado la interfaz de movil, el ha hecho el diseño y yo voy a encargarme de meterlo en el contexto de autenticación, posteriormente insertaré los datos de la base de datos en los respectivos campos de la interfaz. Bien trabajado niño.
+
