@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import  HomeClassCard  from '../components/HomeClassCard';
+
 
 type RootStackParamList = {
     Login: undefined;
@@ -95,22 +97,7 @@ export default function HomeScreen() {
         </Surface>
     );
 
-    const renderClasses = () => (
-        <View style={styles.section}>
-            <Text style={[styles.sectionTitle, { color: 'black' }]}>Clases disponibles</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {['Yoga', 'CrossFit', 'Spinning', 'Boxeo', 'Pilates'].map((clase, index) => (
-                <Card key={index} style={styles.classCard}>
-                <Card.Cover source={require('../../assets/class-placeholder.jpg')} />
-                <Card.Content>
-                    <Text variant="titleMedium" style={{ color: 'black' }}>{clase}</Text>
-                    <Text variant="bodySmall" style={{ color: 'black' }}>Próxima clase: 14:00</Text>
-                </Card.Content>
-                </Card>
-            ))}
-            </ScrollView>
-        </View>
-    );
+    
 
     const renderStats = () => (
         <Surface style={styles.statsContainer} elevation={1}>
@@ -141,7 +128,7 @@ export default function HomeScreen() {
                 {renderWorkoutCard()}
                 {renderQuickActions()}
                 {renderStats()}
-                {renderClasses()}
+                <HomeClassCard/>
                 
                 <View style={styles.section}>
                     <Text style={[styles.sectionTitle, { color: 'black' }]}>Nutrición</Text>
